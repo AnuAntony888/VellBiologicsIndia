@@ -56,7 +56,7 @@ export function Buttons(props) {
         fontWeight: props.fontWeight,
         marginBottom: props.marginBottom,
         transform: props.transform,
-        minWidth: "100px",
+        minWidth: "150px",
         // fontFamily: 'Lato',
         fontFamily: "'Poppins', sans-serif",
         ":hover": {
@@ -123,34 +123,30 @@ export const PaymentButton = ({ method, label, currentMethod, onClick }) => (
 
 function BackgroundWithText(props) {
   return (
+   
+    <Box
+    sx={{
+      position: 'relative',
+      width: '100%',
+      height: '100vh',
+      backgroundImage: 'url(https://tebewebe.online/pharamedic/wp-content/uploads/sites/40/2023/10/shelves-with-medications-at-a-modern-pharmacy-shop.jpg)', // Set your background image URL
+      backgroundSize: 'cover',
+      backgroundPosition: 'center',
+    }}
+  >
+    {/* Overlay with transparent green color */}
     <Box
       sx={{
-  
-         backgroundImage:`url(${props.backgroundImage})`,
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        height: '100vh', // Set the height of the box
-        display: 'flex',
-        alignItems: 'center', // Vertically center text
-        justifyContent: 'center', // Horizontally center text
-        position: 'relative', // Ensure the text stays on top
-      
-        textShadow: '2px 2px 4px rgba(0, 0, 0, 0.7)', // Optional: Add text shadow for contrast
+        position: 'absolute',
+        top: 0,
+        left: 0,
+        width: '100%',
+        height: '100%',
+          backgroundColor:'rgb(47, 108, 109)',
+        opacity:'.8'
       }}
-    >
-      <TypographyText
-        Typography={props.Typography}
-             fontWeigh="700"
-        fontSize={props.fontSize}
-        width={props.width}
-        textAlign={props.textAlign}
-        color={props.color}
-        variant={props.variant}
-      />
-      {/* <Typography variant="h2">
-        Text on Top of Background Image
-      </Typography> */}
-    </Box>
+    />
+  </Box>
   );
 }
 
@@ -160,16 +156,9 @@ export default BackgroundWithText;
 export function CardFunction(props) {
   return (<>
     <Card sx={{width:'100%',height:'100%'}}>
-      {/* <CardMedia
-        sx={{
-          height: props.height,
-          backgroundRepeat:props.backgroundRepeat
-        }}
-        image={props.image}
-        title="green iguana"
-      /> */}
-      <img src={props.image} alt="" style={{height: props.height,}} width={'100%'}/>
-      <CardContent>
+      {props.image?
+        <img src={props.image} alt="" style={{ height: props.height, }} width={'100%'} />
+        : ''}  <CardContent>
         <Typography gutterBottom variant="h6" component="div"
         sx={{fontFamily: "'Poppins', sans-serif",}}>
       {props.txt}
@@ -181,5 +170,58 @@ export function CardFunction(props) {
    
     </Card>
   </>)
+}
+
+export function  Videotext(props) {
+  return (
+    <Box
+      sx={{
+        height: '100vh', // Set the height of the box
+        position: 'relative', // Ensure the text stays on top
+        overflow: 'hidden',
+      }}
+    >
+      {/* Video Background */}
+      <video
+        autoPlay
+        loop
+        muted
+        playsInline
+        style={{
+          width: '100%',
+          height: '100%',
+          objectFit: 'cover',
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          zIndex: -1, // Ensure the video is behind the text
+        }}
+      >
+        <source src={props.backgroundImage} type="video/mp4" />
+      </video>
+
+      {/* Text Overlay */}
+      <Box
+        sx={{
+          display: 'flex',
+          alignItems: 'center', // Vertically center text
+          justifyContent: 'center', // Horizontally center text
+          height: '100%', // Full height to center text
+
+        }}
+      >
+        <TypographyText
+          // fontWeight="600"
+          fontSize={props.fontSize}
+          width={props.width}
+          textAlign={props.textAlign}
+          color={props.color}
+          variant={props.variant}
+          Typography={props.Typography}
+        />
+     
+      </Box>
+    </Box>
+  );
 }
 

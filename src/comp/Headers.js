@@ -42,21 +42,17 @@ const Headers = () => {
           {matches ? (
             <>
               <TypographyText
-                Typography={"Vell Biologics India Pvt. Ltd."}
-                color="#198BDE"
+                Typography={"Logo"}
+                color="#2F6C6D"
                 fontSize="1.5rem"
                 fontWeight="600"
               />
               <Box>
-                {/* {navItems.map((item, index) => (
-                  <Button key={index} sx={{ textTransform: "capitalize" }}>
-                    {item}
-                  </Button>
-                ))} */}
+  
                 {navItems.map((item, index) => (
                   <Button
                     key={index}
-                    sx={{ textTransform: "capitalize" }}
+                    sx={{ textTransform: "capitalize" ,color:'#2F6C6D'}}
                     onClick={() => handleScrollToSection(item.sectionId)}
                   >
                     {item.label}
@@ -67,8 +63,8 @@ const Headers = () => {
           ) : (
             <>
               <TypographyText
-                Typography={"Vell Biologics India Pvt. Ltd."}
-                color="#198BDE"
+                Typography={"Logo"}
+                color="#2F6C6D"
                 fontSize="1.5rem"
                 fontWeight="600"
               />
