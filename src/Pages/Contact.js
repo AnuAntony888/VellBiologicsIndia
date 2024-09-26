@@ -197,12 +197,12 @@ const Contact = () => {
         sx={{ paddingBottom: "50px", pt: "20px" }}
       >
         {/**********************section1************************************ */}
-        <Grid item xs={12} md={12} lg={12} sm={12}>
+        <Grid item xs={12} md={12} lg={12} sm={12} data-aos="fade-left">
           <TypographyText
             Typography={"Contact US"}
-            fontSize={isSmallScreen ? "1.5rem" : "2rem"}
+            variant="h4"
             textAlign="center"
-            color="#001270"
+            color="#132B2C"
           />
         </Grid>
         <Grid item xs={12} md={12} lg={6} sm={12}>
@@ -211,8 +211,8 @@ const Contact = () => {
               <ListItem sx={{ pl: 0, padding: "0" }}>
                 <TypographyText
                   Typography={"Address"}
-                  fontSize="1rem"
-                  color="#001270"
+                  // fontSize="1rem"
+                  color="gray"
                   fontWeight="700"
                 />
               </ListItem>
@@ -225,8 +225,8 @@ const Contact = () => {
                       <TypographyText
                         Typography={data.text}
                         fontSize=".9rem"
-                        color="#2773C7"
-                        fontWeight="600"
+                      color="gray"
+                        // fontWeight="600"
                       />
                       <TypographyText
                         Typography={data.text1}
@@ -380,8 +380,8 @@ const Contact = () => {
                 Buttonname={"Contact Us"}
                 fontWeight="bolder"
                 color="white"
-                bgcolor="#001270"
-                bgcolor1="#001270"
+                bgcolor="#132B2C"
+                bgcolor1="#132B2C"
                 color1="white"
                 textAlign="left"
                 type="submit"
@@ -391,7 +391,7 @@ const Contact = () => {
           </Grid>
         </Grid>
           </Grid>
-          <Box sx={{ backgroundColor: "#001270",padding:'5%'}} >
+          <Box sx={{ backgroundColor: "#132B2C",padding:'5%'}} >
     <TypographyText
             Typography={<>Vell Biologics India 
 Pvt. Ltd © 2024    Powered by Vedaham Business Solutions Pvt Ltd</>}

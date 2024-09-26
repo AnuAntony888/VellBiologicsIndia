@@ -8,44 +8,80 @@ import img3 from "../Assets/6.jpg";
 import img4 from "../Assets/8.png";
 const Leadership = () => {
   const isSmallScreen = useMediaQuery("(max-width:769px)");
-  return (
-    <Box id="services" sx={{ padding: "5%" }}>
-      <Grid
-        container
-        spacing={4}
-        sx={{ alignContent: "center", justifyContent: "center" }}
-      >
-        <Grid item xs={12} md={12} lg={12}>
-          <TypographyText
-            Typography={"Leadership Team Behind Vell Biologics"}
-            fontSize={isSmallScreen ? "1.5rem" : "2rem"}
-            textAlign="center"
-            color="#001270"
-          />
+  return (<>
 
+    <Grid
+    container
+    spacing={2}
+    id="home"
+    sx={{
+      position: "relative",
+    p:'5%',
+      backgroundImage:
+        "url(https://tebewebe.online/pharamedic/wp-content/uploads/sites/40/2023/10/shelves-with-medications-at-a-modern-pharmacy-shop.jpg)",
+      backgroundSize: "cover",
+      backgroundPosition: "center",
+      overflow: "hidden",
+    }}
+  >
+    <Box
+      sx={{
+        position: "absolute",
+        top: 0,
+        left: 0,
+        right: 0,
+        bottom: 0,
+        // backgroundColor: "rgba(47, 108, 109, 0.8)",
+        backgroundColor:"rgba(19, 43, 44, 0.9)",
+        zIndex: 1,
+      }}
+      />
+       <Grid item xs={12} md={12} lg={12} sx={{ zIndex: 2, }}>
+        <Box data-aos="fade-up" data-aos-duration="3000">
           <TypographyText
-            Typography={
-              "Driving Innovation and Access in Rare Disease Treatments"
-            }
-            fontSize={isSmallScreen ? "1.5rem" : "2rem"}
+            Typography="Leadership Team: Driving Innovation and Access in Rare Disease Treatments"
+            variant="h4"
+            color="white"
             textAlign="center"
-            color="#2773C7"
           />
-        </Grid>
-        {Data.map((data, index) => (
-          <Grid item xs={12} md={3} lg={3} sm={6}>
-            <CardFunction
-              image={data.image}
-              txt={data.txt}
-              txt1={data.txt1}
-                    height="300px"
-                    backgroundRepeat='none'
-            />
-          </Grid>
-        ))}
+        </Box>
       </Grid>
-    </Box>
-  );
+      {Data.map((data, index) => (<>
+        <Grid item xs={12} lg={3} md={3} sm={12} sx={{ zIndex: 2, }}>
+      <div data-aos="fade-left">
+       <img src={data.image} alt='' width={'100%'} height={'300px'}/>
+      </div>
+    </Grid>
+    <Grid
+      item
+      xs={12} md={3} lg={3} sm={6} 
+      sx={{
+        zIndex: 2,
+        margin: "auto",
+      }}
+    ><div data-aos="fade-left">
+       <TypographyText
+            Typography={
+              data.txt}
+          
+            fontSize={ "1.5rem" }
+            textAlign="center"
+            color="white"
+            />
+                  <TypographyText
+            Typography={
+              data.txt1}
+          
+            fontSize={ ".9rem" }
+            textAlign="left"
+            color="white"
+          />
+        </div>
+    </Grid>
+   
+     </>   ))}
+  </Grid>
+ </> );
 };
 
 export default Leadership;

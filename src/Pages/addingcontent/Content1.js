@@ -1,5 +1,5 @@
 import React from "react";
-import { TypographyText } from "../../Reuse/Reuse";
+import { Contentdata, TypographyText } from "../../Reuse/Reuse";
 import { useTheme } from "@mui/material/styles";
 import { Grid, useMediaQuery } from "@mui/material";
 import ArrowRightIcon from "@mui/icons-material/ArrowRight";
@@ -8,6 +8,7 @@ const Content1 = () => {
   const isSmallScreen = useMediaQuery(theme.breakpoints.down("md"));
   return (
     <div>
+
       <Grid container spacing={2} sx={{ padding: "3%",bgcolor:'#F6F6F6'}}>
         {Data.map((data, index) => (
           <>

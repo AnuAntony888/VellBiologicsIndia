@@ -32,7 +32,8 @@ const Content3 = () => {
             left: 0,
             right: 0,
             bottom: 0,
-            backgroundColor: "rgba(47, 108, 109, 0.6)",
+            backgroundColor:"rgba(19, 43, 44, 0.9)",
+              // "rgba(47, 108, 109, 0.6)",
             zIndex: 1,
           }}
         />
