@@ -5,8 +5,14 @@ import Button from "@mui/material/Button";
 import AdsClickIcon from '@mui/icons-material/AdsClick';
 import VisibilityIcon from '@mui/icons-material/Visibility';
 import ArrowRightIcon from "@mui/icons-material/ArrowRight";
-import { Avatar, Box, Card, CardContent, CardHeader, CardMedia, Grid, Typography, useMediaQuery, useTheme } from "@mui/material";
+
+import { Avatar, Box, Card, CardContent, CardHeader, CardMedia, Grid, Typography, useMediaQuery, useTheme,  } from "@mui/material";
 import Aos from "aos";
+export const useScreenSize = () => {
+  const theme = useTheme();
+  const matches2 = useMediaQuery(theme.breakpoints.up("sm"));
+  return matches2;
+};
 export function TypographyText(props) {
   return (
     <Typography

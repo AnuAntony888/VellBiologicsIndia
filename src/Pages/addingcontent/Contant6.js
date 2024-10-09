@@ -1,18 +1,19 @@
 import { Box, Grid } from "@mui/material";
 import React from "react";
-import { TypographyText } from "../../Reuse/Reuse";
+import { TypographyText, useScreenSize } from "../../Reuse/Reuse";
 import CheckIcon from "@mui/icons-material/Check";
 
 const Contant6 = () => {
+  const matches2 = useScreenSize();
   return (
     <div>
-      <Box id="services" sx={{ pl: "5%", pr: "5%", pt: "5%", pb: "3%" }}>
+      <Box id="services" sx={{ pl: "5%", pr: "5%", pt: "5%",  pb: "50px" }}>
         <Grid
           container
           spacing={4}
           sx={{ alignContent: "center", justifyContent: "center" }}
         >
-          {" "}
+ 
          
                   <Grid item xs={12} md={6} lg={6} sm={12} sx={{margin:'auto'}}>
                   <Box data-aos="fade-left"
@@ -34,7 +35,7 @@ const Contant6 = () => {
           <Grid item xs={12} md={6} lg={6} sm={12}>
             <TypographyText
               Typography="Patient Support Programs"
-              variant="h4"
+              variant={matches2 ? "h4" : "h5"}
               color="#132B2C"
               textAlign="center"
             />
@@ -50,23 +51,30 @@ const Contant6 = () => {
 
             <Grid container spacing={2}>
               {Data1.map((data, index) => (
-                       < >
-                  <Grid item xs={1} sx={{ margin: "auto" }}>
+                     <React.Fragment key={index}>
+                 <Grid
+                    item
+                    lg={1}
+                    md={1}
+                    sm={2}
+                    xs={2}
+                    sx={{ display: "flex", justifyContent: "center" }}
+                  >
                   <div data-aos="fade-right"
      data-aos-offset="300"
      data-aos-easing="ease-in-sine">
                     <CheckIcon
                       sx={{
                         backgroundColor: "#47A2A3",
-                        fontSize: "2.3rem",
+                        fontSize: "2rem",
                         color: "white", // Set the icon color to white
                         borderRadius: "5px",
                       }}
                       />
                       </div>
                   </Grid>
-                  <Grid item xs={0.5}></Grid>
-                  <Grid item xs={10.5}>
+  
+                  <Grid item lg={10.5} md={10.5} sm={9.5} xs={9.5}>
                   <div data-aos="fade-right"
      data-aos-offset="300"
      data-aos-easing="ease-in-sine">
@@ -83,7 +91,7 @@ const Contant6 = () => {
                       />
       </div>
                   </Grid>
-                </>
+                  </React.Fragment>
               ))}
             </Grid>
           </Grid>
@@ -96,25 +104,7 @@ const Contant6 = () => {
 };
 
 export default Contant6;
-const Data = [
-  {
-    txt: "Government Bodies",
-    name: "To align with policies and provide subsidized treatments.",
-  },
-  {
-    txt: "NGOs",
-    name: "To reach underserved communities and raise awareness.",
-  },
-  {
-    txt: "Healthcare Providers:",
-    name: "To ensure that patients receive timely and appropriate care.",
-  },
-  {
-    txt: "Research and Development",
-    name: "Focused on pioneering new therapies and improving existing ones.",
-  },
-  
-];
+
 const Data1 = [
     {
       txt: "Access to Treatments:",

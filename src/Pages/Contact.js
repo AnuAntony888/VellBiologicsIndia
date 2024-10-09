@@ -1,38 +1,3 @@
-// import { Box, Grid, useMediaQuery } from '@mui/material'
-// import React from 'react'
-// import img1 from '../Assets/0.jpg'
-// import { TypographyText } from '../Reuse/Reuse'
-
-// const Contact = () => {
-//     const isSmallScreen = useMediaQuery("(max-width:769px)");
-//   return (
-//     <Box id="contactme">
-//       <Grid
-//         container
-//         spacing={4}
-//         sx={{ alignContent: "center", justifyContent: "center" }}
-//           >
-//               <Grid item xs={12}>
-//               <TypographyText
-//             Typography={"Contact  Us"}
-//             fontSize={isSmallScreen ? "1.5rem" : "2rem"}
-//             textAlign="center"
-//             color="#001270"
-//           />
-//               </Grid>
-//               <Grid item xs={6} sx={{ maxHeight: '350px', overflow: 'hidden' }}>
-
-// </Grid>
-
-//               <Grid item xs={6}>
-
-//               </Grid>
-//           </Grid>
-//           </Box>
-//   )
-// }
-
-// export default Contact
 import React, { useEffect, useState } from "react";
 
 import {
@@ -58,7 +23,7 @@ import Paper from "@mui/material/Paper";
 
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { Buttons, TypographyText } from "../Reuse/Reuse";
+import { Buttons, TypographyText, useScreenSize } from "../Reuse/Reuse";
 
 const Contact = () => {
   //   const { data } = Bannerimage8();
@@ -187,20 +152,19 @@ const Contact = () => {
     setName(" ");
     setPhone(" ");
   };
-
+  const matches2 = useScreenSize();
   return (
     <div id="contactme">
       <Grid
         container
         spacing={2}
-        className="homepadding2"
-        sx={{ paddingBottom: "50px", pt: "20px" }}
+        sx={{ paddingBottom: "50px", pt: "20px", padding: "5%" }}
       >
         {/**********************section1************************************ */}
         <Grid item xs={12} md={12} lg={12} sm={12} data-aos="fade-left">
           <TypographyText
             Typography={"Contact US"}
-            variant="h4"
+            variant={matches2 ? "h4" : "h5"}
             textAlign="center"
             color="#132B2C"
           />
@@ -211,7 +175,6 @@ const Contact = () => {
               <ListItem sx={{ pl: 0, padding: "0" }}>
                 <TypographyText
                   Typography={"Address"}
-                  // fontSize="1rem"
                   color="gray"
                   fontWeight="700"
                 />
@@ -225,7 +188,7 @@ const Contact = () => {
                       <TypographyText
                         Typography={data.text}
                         fontSize=".9rem"
-                      color="gray"
+                        color="gray"
                         // fontWeight="600"
                       />
                       <TypographyText
@@ -242,7 +205,7 @@ const Contact = () => {
               <Item>
                 <List>
                   <ListItem sx={{ pl: 0, padding: "0" }}>
-                    <TypographyText Typography={"Email"} variant={".9rem"} />
+                    <TypographyText Typography={"Email"} fontSize={".9rem"} />
                   </ListItem>
                   {Address1.map((data, index) => (
                     <ListItem className="listitems" key={index}>
@@ -264,7 +227,7 @@ const Contact = () => {
               <Item>
                 <List>
                   <ListItem sx={{ padding: "0" }}>
-                    <TypographyText Typography={"Phone"} variant={".9rem"} />
+                    <TypographyText Typography={"Phone"} fontSize={".9rem"} />
                   </ListItem>
                   {Address2.map((data, index) => (
                     <ListItem className="listitems" key={index}>
@@ -288,7 +251,7 @@ const Contact = () => {
                   <ListItem sx={{ padding: "0" }}>
                     <TypographyText
                       Typography={"Website"}
-                      variant={".9rem"}
+                      fontSize={".9rem"}
                       //   fontWeight="600"
                     />
                   </ListItem>
@@ -314,14 +277,20 @@ const Contact = () => {
         <Grid item xs={12} md={12} lg={6} sm={12}>
           <Grid container spacing={2}>
             <Grid item xs={12} lg={6} md={6}>
-                          <p style={{
-                              textAlign: "left", paddingBottom: "15px",
-                              fontFamily: "'Poppins', sans-serif",
-              }}>Name</p>
+              <p
+                style={{
+                  textAlign: "left",
+                  paddingBottom: "5px",
+                  fontFamily: "'Poppins', sans-serif",
+                  fontSize: ".9rem",
+                }}
+              >
+                Name
+              </p>
               <TextField
                 variant="outlined"
                 size="small"
-                sx={{ bgcolor: "white" }}
+                sx={{ bgcolor: "white", fontSize: ".9rem" }}
                 fullWidth
                 type="text"
                 placeholder="Entre Your Name"
@@ -330,7 +299,16 @@ const Contact = () => {
               />
             </Grid>
             <Grid item xs={12} lg={6} md={6}>
-              <p style={{ textAlign: "left", paddingBottom: "15px" ,       fontFamily: "'Poppins', sans-serif",}}>Email</p>
+              <p
+                style={{
+                  textAlign: "left",
+                  paddingBottom: "5px",
+                  fontFamily: "'Poppins', sans-serif",
+                  fontSize:'.9rem'
+                }}
+              >
+                Email
+              </p>
               <TextField
                 fullWidth
                 // label="Email"
@@ -338,13 +316,22 @@ const Contact = () => {
                 size="small"
                 type="text"
                 placeholder="Entre Your Email"
-                sx={{ bgcolor: "white" }}
+                sx={{ bgcolor: "white" ,fontSize:'.9rem'}}
                 value={email}
                 onChange={handleEmail}
               />
             </Grid>
             <Grid item xs={12} lg={12} md={12}>
-              <p style={{ textAlign: "left", paddingBottom: "15px",       fontFamily: "'Poppins', sans-serif", }}>Phone</p>
+              <p
+                style={{
+                  textAlign: "left",
+                  paddingBottom: "5px",
+                  fontFamily: "'Poppins', sans-serif",
+                  fontSize:'.9rem'
+                }}
+              >
+                Phone
+              </p>
               <TextField
                 fullWidth
                 variant="outlined"
@@ -353,14 +340,21 @@ const Contact = () => {
                 value={phone}
                 placeholder="Entre Your Phone"
                 onChange={handlePhone}
-                sx={{ bgcolor: "white" }}
+                sx={{
+                  bgcolor: "white",
+                  fontSize:'.9rem'
+                 }}
               />
             </Grid>
             <Grid item xs={12} lg={12} md={12}>
-                          <p style={{
-                              textAlign: "left", paddingBottom: "15px", 
-                              fontFamily: "'Poppins', sans-serif",
-              }}>
+              <p
+                style={{
+                  textAlign: "left",
+                  paddingBottom: "5px",
+                  fontFamily: "'Poppins', sans-serif",
+                  fontSize:'.9rem'
+                }}
+              >
                 Message
               </p>
               <TextField
@@ -390,17 +384,19 @@ const Contact = () => {
             </Grid>
           </Grid>
         </Grid>
-          </Grid>
-          <Box sx={{ backgroundColor: "#132B2C",padding:'5%'}} >
-    <TypographyText
-            Typography={<>Vell Biologics India 
-Pvt. Ltd © 2024    Powered by Vedaham Business Solutions Pvt Ltd</>}
-     
-     textAlign= "center" 
-            color="whitesmoke"
-          />
+      </Grid>
+      <Box sx={{ backgroundColor: "#132B2C", padding: "5%" }}>
+        <TypographyText
+          Typography={
+            <>
+              Vell Biologics India Pvt. Ltd © 2024 Powered by Vedaham Business
+              Solutions Pvt Ltd
+            </>
+          }
+          textAlign="center"
+          color="whitesmoke"
+        />
       </Box>
-
     </div>
   );
 };
@@ -408,17 +404,13 @@ Pvt. Ltd © 2024    Powered by Vedaham Business Solutions Pvt Ltd</>}
 export default Contact;
 const Address = [
   {
-    SocialIcon: <HomeIcon sx={{ color: "black" }} />,
+    SocialIcon: <HomeIcon sx={{ color: "#132B2C" }} />,
     text: <> Corporate Office</>,
     text1: (
       <>
-        SriDevi Nilaya #50,
+        SriDevi Nilaya #50, 7th Main Road,
         <br />
-        7th Main Road,
-        <br />
-        Mahalakshmi Layout
-        <br />
-        Bangalore, India
+        Mahalakshmi Layouth Bangalore, India
       </>
     ),
   },
@@ -426,21 +418,21 @@ const Address = [
 
 const Address1 = [
   {
-    SocialIcon: <EmailIcon sx={{ color: "black" }} />,
+    SocialIcon: <EmailIcon sx={{ color: "#132B2C" }} />,
 
     text1: "",
   },
 ];
 const Address2 = [
   {
-    SocialIcon: <PhoneIcon sx={{ color: "black" }} />,
+    SocialIcon: <PhoneIcon sx={{ color: "#132B2C" }} />,
 
     text1: <></>,
   },
 ];
 const Address3 = [
   {
-    SocialIcon: <PublicIcon sx={{ color: "black" }} />,
+    SocialIcon: <PublicIcon sx={{ color: "#132B2C" }} />,
 
     text1: <></>,
   },

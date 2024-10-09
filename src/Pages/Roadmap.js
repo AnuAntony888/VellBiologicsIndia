@@ -1,6 +1,6 @@
 import { Box, Grid, useMediaQuery } from "@mui/material";
 import React from "react";
-import { CardFunction, TypographyText } from "../Reuse/Reuse";
+import { CardFunction, TypographyText, useScreenSize } from "../Reuse/Reuse";
 import img1 from "../Assets/9.jpg";
 import img2 from "../Assets/10.png";
 import img3 from "../Assets/11.png";
@@ -8,20 +8,25 @@ import img4 from "../Assets/12.png";
 import { containerStyles, rightGridStyles } from "./Bridging";
 import { styles } from "./addingcontent/Style";
 const Roadmap = () => {
-  const isSmallScreen = useMediaQuery("(max-width:769px)");
+  const matches2 = useScreenSize();
   return (
 
     <Box sx={{ ...styles.bg1 }}>
       <Box sx={{ pt: "5%", pl: "10%", pb: "5%", width: "100%" }}>
+      <Box sx={{paddingRight:'5%'}}>
         <TypographyText
           Typography="Vell Bio: Transforming Access to Life-Saving Rare Disease Treatments"
-          variant="h4"
+          variant={matches2 ? "h4" : "h5"}
           color="white"
           textAlign="center"
-        />
+          />
+          </Box>
         <br />
         <br />
-        <Grid container sx={containerStyles} data-aos="fade-right">
+        <Grid container sx={containerStyles} data-aos="fade-right"
+                 data-aos-anchor="#example-anchor"
+                 data-aos-offset="500"
+                 data-aos-duration="500">
           <Grid item lg={3} md={6} sm={6} xs={12}>
             <img src={img4} alt="" width={"100%"} />
           </Grid>
@@ -49,7 +54,7 @@ const Roadmap = () => {
       </Box>
 
       {/****************section***************8 */}
-      <Box sx={{ pt: "5%", pr: "10%", pb: "5%" }}>
+      <Box sx={{ pt: "5%", pr: "10%", pb: "5%" ,width: "100%"}}>
         <Grid container sx={containerStyles} data-aos="fade-left">
           <Grid item lg={6} md={6} sm={6} xs={12} sx={rightGridStyles}>
             <Box sx={{ p: "5%" }}>
@@ -77,7 +82,7 @@ const Roadmap = () => {
       </Box>
 
       {/**************section3****************8 */}
-      <Box sx={{ pt: "5%", pl: "10%", pb: "5%" }}>
+      <Box sx={{ pt: "5%", pl: "10%", pb: "5%",width: "100%" }}>
         <Grid container sx={containerStyles} data-aos="fade-left">
           <Grid item lg={3} md={6} sm={6} xs={12}>
             <img src={img3} alt="" width={"100%"} />
@@ -105,7 +110,7 @@ const Roadmap = () => {
         </Grid>
       </Box>
       {/****************section***************8 */}
-      <Box sx={{ pt: "5%", pr: "10%", pb: "5%" }}>
+      <Box sx={{ pt: "5%", pr: "10%", pb: "5%" ,width: "100%"}}>
         <Grid container sx={containerStyles} data-aos="fade-left">
           <Grid item lg={6} md={6} sm={6} xs={12} sx={rightGridStyles}>
             <Box sx={{ p: "5%" }}>

@@ -19,7 +19,9 @@ const Technicalskills = () => {
   return (
     <Grid container spacing={2} sx={{ p: "5%" }}>
       <Grid item xs={12} md={12} lg={12}>
-        <Box data-aos="fade-up" data-aos-duration="3000">
+        <Box data-aos="fade-up"          data-aos-anchor="#example-anchor"
+              data-aos-offset="500"
+              data-aos-duration="500">
           <TypographyText
             Typography="India's Rare Disease Market: Opportunities and Growth Potential"
             variant="h4"

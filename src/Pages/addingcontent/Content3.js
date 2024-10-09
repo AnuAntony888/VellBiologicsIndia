@@ -1,10 +1,11 @@
 import { Box, Grid, useMediaQuery, useTheme } from "@mui/material";
 import React from "react";
-import { TypographyText } from "../../Reuse/Reuse";
+import { TypographyText, useScreenSize } from "../../Reuse/Reuse";
 
 const Content3 = () => {
   const theme = useTheme();
   const isSmallScreen = useMediaQuery(theme.breakpoints.down("md"));
+  const matches2 = useScreenSize();
   return (
     <div>
       <Grid
@@ -13,7 +14,7 @@ const Content3 = () => {
         id="home"
         sx={{
           position: "relative",
-
+width:'100%',
           paddingTop: "7%",
           pl: "7%",
           pr: "7%",
@@ -23,17 +24,19 @@ const Content3 = () => {
           backgroundPosition: "50% 40%",
           overflow: "hidden",
           height: "100vh",
+          margin:0
         }}
       >
         <Box
           sx={{
+            width:'100%',
             position: "absolute",
             top: 0,
             left: 0,
             right: 0,
             bottom: 0,
             backgroundColor:"rgba(19, 43, 44, 0.9)",
-              // "rgba(47, 108, 109, 0.6)",
+         
             zIndex: 1,
           }}
         />
@@ -47,12 +50,15 @@ const Content3 = () => {
             zIndex: 2,
           }}
         >
-          <Box data-aos="fade-up" data-aos-duration="3000">
+          <Box data-aos="fade-up"
+                   data-aos-anchor="#example-anchor"
+                   data-aos-offset="500"
+                   data-aos-duration="500">
             <TypographyText
               Typography={<>Transforming Rare Disease Treatment in India</>}
               color="white"
               textAlign="center"
-              variant="h4"
+              variant={matches2 ? "h4" : "h5"}
             //   fontWeight="600"
             />
             <TypographyText

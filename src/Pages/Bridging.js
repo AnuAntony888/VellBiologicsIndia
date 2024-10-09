@@ -1,33 +1,35 @@
 import { Box, Grid, } from "@mui/material";
 import React from "react";
-import {  TypographyText } from "../Reuse/Reuse";
+import {  TypographyText, useScreenSize } from "../Reuse/Reuse";
 import img1 from "../Assets/2.png";
 import img2 from "../Assets/4.jpg";
 import img3 from "../Assets/3.png";
 import { styles } from "./addingcontent/Style";
 const Bridging = () => {
- 
+  const matches2 = useScreenSize();
 
   return (
     <>
      
       {/**************************************************************************/}
       <Box sx={{ ...styles.bg1 }}>
-        <Box sx={{ pt: "5%", pl: "10%", pb: "5%",width:'100%' }}>
-
-        <TypographyText
+        <Box sx={{ pt: "5%", pl: "7%", pb: "5%",width:'100%' }}>
+          <Box sx={{paddingRight:'7%'}}>
+          <TypographyText
               Typography="Vell Bio: Transforming Access to Life-Saving Rare Disease Treatments"
-              variant="h4"
+              variant={matches2 ? "h4" : "h5"}
               color="white"
               textAlign="center"
           />
+</Box>
+     
           <br />
           <br/>
         <Grid container sx={containerStyles} data-aos="fade-right">
           <Grid item lg={3} md={6} sm={6} xs={12}>
             <img
               src={
-                "http://localhost:3000/static/media/2.1e7143b682351dabf44f.png"
+               img1
               }
               alt=""
               width={"100%"}

@@ -6,9 +6,8 @@ import useMediaQuery from "@mui/material/useMediaQuery";
 
 const VissionMission = () => {
   const theme = useTheme();
-  const large = useMediaQuery(theme.breakpoints.up("lg"));
-  const matches = useMediaQuery(theme.breakpoints.up("md"));
-  const matches2 = useMediaQuery(theme.breakpoints.up("sm"));
+
+ const matches2 = useMediaQuery(theme.breakpoints.up("sm"));
   let heading;
   return (
       <div>
@@ -16,7 +15,7 @@ const VissionMission = () => {
 
       {/***************************************8 */}
       <Box sx={containerStyles4}>
-        <Grid container spacing={4}>
+        <Grid container spacing={4} >
           <Grid item xs={12} lg={6} md={6} sm={12}>
             <Grid container spacing={2}>
               <Grid item xs={12} lg={6} md={6} sm={6}>
@@ -47,7 +46,7 @@ const VissionMission = () => {
               Typography={<>Empowering Access to Rare
                 <span style={{color:'#C49B44'}}>Treatments</span>
               </>}
-              variant={matches2 ? "h3" : "h4"}
+              variant={matches2 ? "h4" : "h5"}
          
                 textAlign="left"
                 color ='white'
@@ -55,7 +54,9 @@ const VissionMission = () => {
             <TypographyText
               Typography={<>
               </>}
-              variant={matches2 ? "h3" : "h4"}
+                variant={matches2 ? "h4" : "h5"
+                
+              }
           textAlign="left"
                 color ='white'
                      /> 
@@ -124,5 +125,6 @@ const containerStyles4 = {
   pl: "10%",
   pr: "10%",
   pb: "5%",
+  margin:'0',
   bgcolor: "#132B2C",
 };

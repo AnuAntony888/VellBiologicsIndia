@@ -9,14 +9,16 @@ const Content1 = () => {
   return (
     <div>
 
-      <Grid container spacing={2} sx={{ padding: "3%",bgcolor:'#F6F6F6'}}>
+      <Grid container spacing={2} sx={{ padding: '5%', bgcolor: '#F6F6F6', margin: 0 }}
+      >
         {Data.map((data, index) => (
           <>
             <Grid item xs={11} md={5.5} lg={2.5} sm={5.5}>
               <TypographyText
                 Typography={data.txt}
                 fontSize= "1.3rem"
-                // textAlign="center"
+                
+
                 color="#2F6C6D"
               />
               <TypographyText

@@ -81,6 +81,7 @@ export default Headers;
 
 export const navItems = [
   { label: "Home", sectionId: "home" },
+  { label: "Analysis", sectionId: "Analysis" },
   { label: "Opportunities", sectionId: "aboutme" },
   { label: "Transformation", sectionId: "technicalskills" },
   { label: "Leadership", sectionId: "services" },
